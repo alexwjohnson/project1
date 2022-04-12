@@ -4,6 +4,7 @@ class CreateLabels < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :location
       t.text :image
+
       t.timestamps
     end
   end

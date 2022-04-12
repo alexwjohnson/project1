@@ -7,11 +7,12 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.integer :bpm
       t.text :music_key
       t.text :duration
-      t.text :remix
+      t.text :rmx
       t.text :image
-      t.integer :release_id
       t.integer :artist_id
+      t.integer :release_id
       t.integer :label_id
+
       t.timestamps
     end
   end

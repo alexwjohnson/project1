@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_071847) do
+ActiveRecord::Schema.define(version: 2022_04_12_004721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 2022_04_11_071847) do
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "genres_tracks", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "track_id"
   end
 
   create_table "labels", force: :cascade do |t|
@@ -47,6 +52,11 @@ ActiveRecord::Schema.define(version: 2022_04_11_071847) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "releases_tracks", id: false, force: :cascade do |t|
+    t.integer "release_id"
+    t.integer "track_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.text "title"
     t.text "catalog"
@@ -54,10 +64,10 @@ ActiveRecord::Schema.define(version: 2022_04_11_071847) do
     t.integer "bpm"
     t.text "music_key"
     t.text "duration"
-    t.text "remix"
+    t.text "rmx"
     t.text "image"
-    t.integer "release_id"
     t.integer "artist_id"
+    t.integer "release_id"
     t.integer "label_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

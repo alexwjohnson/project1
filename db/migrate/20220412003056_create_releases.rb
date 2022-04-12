@@ -6,6 +6,7 @@ class CreateReleases < ActiveRecord::Migration[5.2]
       t.text :year
       t.text :media
       t.text :image
+
       t.timestamps
     end
   end
