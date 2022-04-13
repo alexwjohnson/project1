@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thevinylcompendium</title>
+    <title>The Vinyl Compendium</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <div class="container">
+
+        <%= link_to "Home", root_path %>
+        |
+        <%= link_to "All Artists", artists_path %>
+        <%= link_to "New Artist", new_artist_path %>
+        |
+         <%= link_to "All Labels", labels_path %>
+         <%= link_to "New Label", new_label_path %>
+        |
+         <%= link_to "All Tracks", tracks_path %>
+         <%= link_to "New Track", new_track_path %>
+        |
+         <%= link_to "New Genre", new_genre_path %>
+
+    </div>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,9 @@
+<h1>All Tracks</h1>
+<% @tracks.each do |track| %>
+    <%# <%= link_to image_tag(track.image, :class => 'thumb' if track.image.present? ), track %>
+            <ul>
+            <li>Name:           <%= link_to track.title, track %></li>
+        </ul>
+<% end %>
+
+

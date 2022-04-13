@@ -1,1 +1,7 @@
-<h1>Vinyl Compendium</h1>
+<h1>The Vinyl Compendium Home</h1>
+
+<% @genres.each do |genre| %>
+        <ul>
+            <li><%= link_to genre.name, genre %></li>
+        </ul>
+<% end %>
