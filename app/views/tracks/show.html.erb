@@ -1,5 +1,5 @@
 <h1><%= @track.title %></h1>
-    <%= image_tag @track.image, :class => 'feature' if @track.image.present? %>
+  
         <ul>
             <li>Title:           <%= @track.title %></li>
             <li>Year:            <%= @track.year unless @track.year.nil? %></li>
@@ -7,8 +7,11 @@
             <li>Key:            <%= @track.music_key unless @track.music_key.nil? %></li>
             <li>Duration:            <%= @track.duration unless @track.duration.nil? %></li>
             <li>Remix:            <%= @track.rmx unless @track.rmx.nil? %></li>
+            <div>
+                <%= cl_image_tag(@track.image) %>
+            </div>
         </ul>
     <div class="controls">
-        <%= button_to "Edit Track", edit_track_path %>
+        <%= button_to "Edit Track", edit_track_path, :method => 'get'  %>
         <%= button_to "Delete Track", @track, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>

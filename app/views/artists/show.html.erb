@@ -5,6 +5,6 @@
             <li>Bio:            <%= @artist.bio unless @artist.bio.nil? %></li>
         </ul>
     <div class="controls">
-        <%= button_to "Edit Artist", edit_artist_path %>
+        <%= button_to "Edit Artist", edit_artist_path, :method => 'get' %>
         <%= button_to "Delete Artist", @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>

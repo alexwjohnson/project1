@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
- 
-  get 'releases/index'
-  get 'releases/new'
-  get 'releases/edit'
-  get 'releases/show'
-  get 'releases/delete'
+
   root :to => 'pages#home'
 
   resources :artists     
@@ -14,6 +9,7 @@ Rails.application.routes.draw do
   resources :labels 
 
   resources :genres
+
+  resources :releases
  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
