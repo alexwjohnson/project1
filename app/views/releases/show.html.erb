@@ -9,6 +9,12 @@
                 <%= cl_image_tag(@release.image) %>
             </div>
         </ul>
+        <div>
+            <% @release.tracks.each do |track| %>
+            <p> <%= track.title %></p>
+            <%# <%= cl_image_tag(track.image, :class => 'thumb') %> 
+        <% end %>
+        </div>
     <div class="controls">
         <%= button_to "Edit Release", edit_release_path, :method => 'get'  %>
         <%= button_to "Delete Release", @release, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
