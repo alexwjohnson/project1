@@ -1,2 +1,10 @@
-<h1>Labels#show</h1>
-<p>Find me in app/views/labels/show.html.erb</p>
+<h1><%= @label.name %></h1>
+    <%= image_tag @label.image, :class => 'feature' if @label.image.present? %>
+        <ul>
+            <li>Name:           <%= @label.name %></li>
+            <li>Location:            <%= @label.location unless @label.location.nil? %></li>
+        </ul>
+    <div class="controls">
+        <%= button_to "Edit Label", edit_label_path, :method => 'get' %>
+        <%= button_to "Delete Label", @label, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    </div>

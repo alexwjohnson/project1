@@ -1,0 +1,15 @@
+<%= form_for(@release, :html => {:multipart => true}) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :release_type %>
+    <%= f.text_field :release_type %>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+    <%= f.label :media %>
+    <%= f.text_field :media %>
+    <%= f.label :image %>
+    <%= f.cl_image_upload :image, :required => true  %>
+    <%= f.submit %>
+<% end %>
+
+

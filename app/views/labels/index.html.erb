@@ -1,2 +1,8 @@
-<h1>Labels#index</h1>
-<p>Find me in app/views/labels/index.html.erb</p>
+<h1>All Labels</h1>
+
+<% @labels.each do |label| %>
+    <%= image_tag label.image, :class => 'thumb' if label.image.present? %>
+        <ul>
+            <li>Name:           <%= link_to label.name, label %></li>
+        </ul>
+<% end %>

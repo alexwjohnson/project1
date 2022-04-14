@@ -1,2 +1,15 @@
-<h1>Releases#show</h1>
-<p>Find me in app/views/releases/show.html.erb</p>
+<h1><%= @release.name %></h1>
+  
+        <ul>
+            <li>name:           <%= @release.name %></li>
+            <li>Format:            <%= @release.release_type unless @release.release_type.nil? %></li>
+            <li>Year:            <%= @release.year unless @release.year.nil? %></li>
+            <li>Media:            <%= @release.media unless @release.media.nil? %></li>
+            <div>
+                <%= cl_image_tag(@release.image) %>
+            </div>
+        </ul>
+    <div class="controls">
+        <%= button_to "Edit Release", edit_release_path, :method => 'get'  %>
+        <%= button_to "Delete Release", @release, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    </div>
