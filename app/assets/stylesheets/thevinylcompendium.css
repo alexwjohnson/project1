@@ -1,5 +1,6 @@
-.thumb {
-    height: 12em;
+body    {
+    background-color:rgba(218, 230, 238, 0.457)
+
 }
 ul.no-bullets {
     list-style-type: none; /* Remove bullets */

@@ -1,5 +1,8 @@
 <h1><%= @artist.name %></h1>
-    <%= image_tag @artist.image, :class => 'feature' if @artist.image.present? %>
+    <%# <%= image_tag @artist.image, :class => 'feature' if @artist.image.present? %>
+        <div>
+                <%= cl_image_tag(@artist.image) %>
+            </div>
         <ul>
             <li>Name:           <%= @artist.name %></li>
             <li>Bio:            <%= @artist.bio unless @artist.bio.nil? %></li>

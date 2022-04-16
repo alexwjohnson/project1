@@ -1,6 +1,22 @@
 <h1>The Vinyl Compendium</h1>
-<% @genres.each do |genre| %>
-        <ul>
-            <li class="no-bullets"><%= link_to genre.name, genre %></li>
-        </ul>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+         <img class="img-fluid" src="https://res.cloudinary.com/dy9id3syp/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1650092251/j30t6dvxiakjaddvvedp.jpg" />
+    </div>
+    <div class="col align-self-center">
+        <% @genres.each do |genre| %>
+            <ul>
+                <li class="no-bullets"><%= link_to genre.name, genre %></li>
+            </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

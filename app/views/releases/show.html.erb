@@ -1,21 +1,36 @@
 <h1><%= @release.name %></h1>
-  
-        <ul>
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+         <ul>
             <li>name:           <%= @release.name %></li>
             <li>Format:            <%= @release.release_type unless @release.release_type.nil? %></li>
             <li>Year:            <%= @release.year unless @release.year.nil? %></li>
             <li>Media:            <%= @release.media unless @release.media.nil? %></li>
             <div>
-                <%= cl_image_tag(@release.image) %>
+                <%= cl_image_tag(@release.image, :width=>250, :crop=>"thumb") %>
             </div>
         </ul>
-        <div>
+    </div>
+    <div class="col align-self-center">
+                <div>
             <ol>
             <% @release.tracks.each do |track| %>
-            <li> <%= track.title %></li>
+            <li> <%= track.title %></li>    
         <% end %>
             </ol>
         </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
     <div class="controls">
         <%= button_to "Edit Release", edit_release_path, :method => 'get', :class => 'btn btn-outline-dark'  %>
         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#rModal">

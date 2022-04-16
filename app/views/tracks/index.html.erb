@@ -1,17 +1,11 @@
 <h1>All Tracks</h1>
-
 <% @tracks.each do |track| %>
-    <%# <%= link_to image_tag(track.image, :class => 'thumb' if track.image.present? ), track %>
     <div class="card" style="width: 18rem;">
-          <%# <img src="..." class="card-img-top" alt="..."> %>
-                <%# <%= cl_image_tag(@track.image, :class => 'card-img-top').present? %>
-                <div class="card-body">
-                    <p>
-                        <%= link_to track.title, track %>
-                         <div>
-                            <%# <%= cl_image_tag(@track.image, :class => 'w-25 p-3') %>
-                          </div>
-                    </p>   
-                 </div>
+        <div class="card-body">
+            <p>
+                <%= link_to track.title, track %>
+            </p>   
+            <%= cl_image_tag(track.image, :width=>100, :crop=>"thumb") %>
+        </div>
     </div>
 <% end %>
