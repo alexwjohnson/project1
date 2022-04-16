@@ -4,33 +4,60 @@
     <title>The Vinyl Compendium</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= cloudinary_js_config %>
   </head>
-
   <body>
     <div class="container">
-
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <%= link_to "Home", root_path %>
-        |
-        <%= link_to "All Artists", artists_path %>
-        <%= link_to "New Artist", new_artist_path %>
-        |
-         <%= link_to "All Labels", labels_path %>
-         <%= link_to "New Label", new_label_path %>
-        |
-         <%= link_to "All Releases", releases_path %>
-         <%= link_to "New Release", new_release_path %>
-        |
-         <%= link_to "All Tracks", tracks_path %>
-         <%= link_to "New Track", new_track_path %>
-        |
-         <%= link_to "New Genre", new_genre_path %>
-
-    </div>
-
+        <li class="nav-item dropdown no-bullets">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Artists
+            </a>
+            <ul class="dropdown-menu no-bullets" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><%= link_to "All Artists", artists_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "New Artist", new_artist_path %></a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown no-bullets">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Record Labels
+            </a>
+            <ul class="dropdown-menu no-bullets" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><%= link_to "All Labels", labels_path %></a></li>
+              <li><a class="dropdown-item" href="#"> <%= link_to "New Label", new_label_path %></a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown no-bullets">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Releases
+            </a>
+            <ul class="dropdown-menu no-bullets" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"> <%= link_to "All Releases", releases_path %></a></li>
+              <li><a class="dropdown-item" href="#"> <%= link_to "New Release", new_release_path %></a></li>
+            </ul>
+        </li>        
+        <li class="nav-item dropdown no-bullets">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tracks
+            </a>
+            <ul class="dropdown-menu no-bullets" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"> <%= link_to "All Tracks", tracks_path %></a></li>
+              <li><a class="dropdown-item" href="#"> <%= link_to "New Track", new_track_path %></a></li>
+            </ul>
+        </li>  
+        <li class="nav-item dropdown no-bullets">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Genres
+            </a>
+            <ul class="dropdown-menu no-bullets" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><%= link_to "New Genre", new_genre_path %></a></li>
+            </ul>
+        </li>  
+      </nav>
     <%= yield %>
+        </div>
   </body>
 </html>

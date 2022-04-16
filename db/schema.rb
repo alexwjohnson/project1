@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_12_004721) do
+ActiveRecord::Schema.define(version: 2022_04_15_022438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 2022_04_12_004721) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genres_releases", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "release_id"
+  end
+
   create_table "genres_tracks", id: false, force: :cascade do |t|
     t.integer "genre_id"
     t.integer "track_id"
@@ -40,6 +45,11 @@ ActiveRecord::Schema.define(version: 2022_04_12_004721) do
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "labels_releases", id: false, force: :cascade do |t|
+    t.integer "label_id"
+    t.integer "release_id"
   end
 
   create_table "releases", force: :cascade do |t|

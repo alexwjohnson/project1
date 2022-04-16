@@ -5,6 +5,25 @@
             <li>Bio:            <%= @artist.bio unless @artist.bio.nil? %></li>
         </ul>
     <div class="controls">
-        <%= button_to "Edit Artist", edit_artist_path, :method => 'get' %>
-        <%= button_to "Delete Artist", @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+        <%= button_to "Edit Artist", edit_artist_path, :method => 'get', :class => 'btn btn-outline-dark' %>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#aModal">
+            Delete
+        </button>
+            <div class="modal fade" id="aModal" tabindex="-1" aria-labelledby="aModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="aModalLabel">Delete Artist</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                             Are You Sure?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-light" > <%= button_to "Delete Artist", @genre, :method => 'delete', :class => 'btn btn-outline-dark' %></button>
+                        </div>
+                     </div>
+                </div>
+            </div>
     </div>

@@ -1,7 +1,6 @@
 <h1>The Vinyl Compendium</h1>
-
 <% @genres.each do |genre| %>
         <ul>
-            <li><%= link_to genre.name, genre %></li>
+            <li class="no-bullets"><%= link_to genre.name, genre %></li>
         </ul>
 <% end %>

@@ -10,12 +10,34 @@
             </div>
         </ul>
         <div>
+            <ol>
             <% @release.tracks.each do |track| %>
-            <p> <%= track.title %></p>
-            <%# <%= cl_image_tag(track.image, :class => 'thumb') %> 
+            <li> <%= track.title %></li>
         <% end %>
+            </ol>
         </div>
     <div class="controls">
-        <%= button_to "Edit Release", edit_release_path, :method => 'get'  %>
-        <%= button_to "Delete Release", @release, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+        <%= button_to "Edit Release", edit_release_path, :method => 'get', :class => 'btn btn-outline-dark'  %>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#rModal">
+            Delete
+        </button>
+        <div class="modal fade" id="rModal" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">l
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rModalLabel">Delete Release</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                    <div class="modal-body">
+                        Are You Sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light" > <%= button_to "Delete Release", @release, :method => 'delete', :class => 'btn btn-outline-dark' %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+ 

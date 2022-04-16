@@ -1,35 +1,38 @@
+<div class="form-floating mb-3">
 <%= form_for(@track, :html => {:multipart => true}) do |f| %>
-
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :catalog %>
-    <%= f.text_field :catalog %>
-
-    <%= f.label :year %>
-    <%= f.text_field :year %>
-
-    <%= f.label :bpm %>
-    <%= f.text_field :bpm %>
-    
-    <%= f.label :music_key %>
-    <%= f.text_field :music_key %>
-    
-    <%= f.label :duration %>
-    <%= f.text_field :duration %>
-
-    <%= f.label :rmx %>
-    <%= f.text_field :rmx %>
-
-    <%= f.label :image %>
-    <%= f.cl_image_upload :image, :required => true %>
-
-
-
-
-    <%= f.label :artist_id %>
-    <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true  %>
-
-    <%= f.submit %>
-
+    <%= f.label :title, :for => 'floatingInput' %>
+    <%= f.text_field  :title , :class => 'form-control', :id => 'floatingInput', :placeholder => 'track name' %>
+    <%= f.label :catalog, :for => 'floatingInput'  %>
+    <%= f.text_field :catalog, :class => 'form-control', :id => 'floatingInput', :placeholder => 'catalogue no.'  %>
+    <%= f.label :year, :for => 'floatingInput'  %>
+    <%= f.text_field :year, :class => 'form-control', :id => 'floatingInput', :placeholder => 'year'  %>
+    <%= f.label :bpm, :for => 'floatingInput'  %>
+    <%= f.text_field :bpm, :class => 'form-control', :id => 'floatingInput', :placeholder => 'beats per minute'  %>
+    <%= f.label :music_key, :for => 'floatingInput'  %>
+    <%= f.text_field :music_key, :class => 'form-control', :id => 'floatingInput', :placeholder => 'e.g G#Maj'  %>
+    <%= f.label :duration, :for => 'floatingInput'  %>
+    <%= f.text_field :duration, :class => 'form-control', :id => 'floatingInput', :placeholder => 'mm.ss'  %>
+    <%= f.label :rmx, :for => 'floatingInput'  %>
+    <%= f.text_field :rmx, :class => 'form-control', :id => 'floatingInput', :placeholder => 'producer name'  %>
+    <div class="container p-3">
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <%= f.label :image, :for => 'formFile', :class => 'form-label'  %>
+                <%= f.cl_image_upload :image, :class => 'form-control', :id => 'formFile', :type => 'file' %>
+            </div>
+            <div class="col-md-4 offset-md-4">
+                <%= f.label :artist_id, :for => 'floatingSelect'  %>
+                <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %>
+            </div>
+        </div>
+    </div>
+    <div class="container p-3">
+    <%= f.submit :class => 'btn btn-outline-dark' %>
+    </div>
 <% end %>
+</div>
+
+
+
+
+

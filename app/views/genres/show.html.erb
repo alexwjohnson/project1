@@ -1,4 +1,22 @@
 <h1><%= @genre.name %></h1>
-    <div class="controls">
-        <%= button_to "Delete Genre", @genre, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#gModal">
+  Delete
+</button>
+<div class="modal fade" id="gModal" tabindex="-1" aria-labelledby="gModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gModalLabel">Delete Genre</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are You Sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-light" > <%= button_to "Delete Genre", @genre, :method => 'delete', :class => 'btn btn-outline-dark' %></button>
+      </div>
     </div>
+  </div>
+</div>
+    

@@ -1,8 +1,8 @@
 <h1>All Labels</h1>
 
 <% @labels.each do |label| %>
-    <%= image_tag label.image, :class => 'thumb' if label.image.present? %>
+    <%# <%= image_tag label.image, :class => 'thumb' if label.image.present? %>
         <ul>
-            <li>Name:           <%= link_to label.name, label %></li>
+            <li class="no-bullets"><%= link_to label.name, label %></li>
         </ul>
 <% end %>

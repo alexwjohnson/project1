@@ -7,17 +7,34 @@ class LabelsController < ApplicationController
     @label = Label.new
   end
   def create
-    label = Label.create label_params 
-    redirect_to label  
+    # label = Label.create label_params 
+    # redirect_to label  
+    label = Label.create label_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      label.image = req["public_id"]
+      label.save
+    end
+    redirect_to label_path(label)
   end 
 
   def edit
     @label = Label.find params[:id] 
   end
   def update 
-    label = Label.find params[:id]
-    label.update label_params
-    redirect_to label
+    # label = Label.find params[:id]
+    # label.update label_params
+    # redirect_to label
+      #cloudify
+    label = Label.find(params[:id])  
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        label.image = req["public_id"]
+      end
+      label.update_attributes(label_params)
+      label.save
+      redirect_to(label_path(label))
+    #cloudify
   end
 
   def show

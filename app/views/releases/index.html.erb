@@ -2,6 +2,6 @@
 <% @releases.each do |release| %>
     <%# <%= link_to image_tag(track.image, :class => 'thumb' if track.image.present? ), track %>
             <ul>
-            <li>Name:           <%= link_to release.name, release %></li>
+            <li class="no-bullets"><%= link_to release.name, release %></li>
         </ul>
 <% end %>

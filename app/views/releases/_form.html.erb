@@ -1,15 +1,21 @@
+<div class="form-floating mb-3">
 <%= form_for(@release, :html => {:multipart => true}) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :release_type %>
-    <%= f.text_field :release_type %>
-    <%= f.label :year %>
-    <%= f.text_field :year %>
-    <%= f.label :media %>
-    <%= f.text_field :media %>
-    <%= f.label :image %>
-    <%= f.cl_image_upload :image, :required => true  %>
-    <%= f.submit %>
+    <%= f.label :name, :for => 'floatingInput' %>
+    <%= f.text_field :name, :class => 'form-control', :id => 'floatingInput', :placeholder => 'Lust For Life' %>
+    <%= f.label :release_type, :for => 'floatingInput' %>
+    <%= f.text_field :release_type, :class => 'form-control', :id => 'floatingInput', :placeholder => '12 inch Single' %>
+    <%= f.label :year, :for => 'floatingInput' %>
+    <%= f.text_field :year, :class => 'form-control', :id => 'floatingInput', :placeholder => '1979' %>
+    <%= f.label :media, :for => 'floatingInput' %>
+    <%= f.text_field :media, :class => 'form-control', :id => 'floatingInput', :placeholder => 'vinyl' %>
+    <div class="container p-3">
+        <%= f.label :image, :for => 'formFile', :class => 'form-label'  %>
+        <%= f.cl_image_upload :image, :class => 'form-control', :id => 'formFile', :type => 'file' %>
+    </div>
+    <div class="container p-3">
+        <%= f.submit :class => 'btn btn-outline-dark' %>
+    </div>
 <% end %>
+</div>
 
 

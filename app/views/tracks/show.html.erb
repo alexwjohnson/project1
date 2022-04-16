@@ -8,10 +8,29 @@
             <li>Duration:            <%= @track.duration unless @track.duration.nil? %></li>
             <li>Remix:            <%= @track.rmx unless @track.rmx.nil? %></li>
             <div>
-                <%= cl_image_tag(@track.image) %>
+                <%= cl_image_tag(@track.image, :class => 'w-25 p-3') %>
             </div>
         </ul>
     <div class="controls">
-        <%= button_to "Edit Track", edit_track_path, :method => 'get'  %>
-        <%= button_to "Delete Track", @track, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+        <%= button_to "Edit Track", edit_track_path, :method => 'get', :class => 'btn btn-outline-dark'  %>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#tModal">
+            Delete
+        </button>
+        <div class="modal fade" id="tModal" tabindex="-1" aria-labelledby="tModalLabel" aria-hidden="true">l
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tModalLabel">Delete Track</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                    <div class="modal-body">
+                        Are You Sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light" > <%= button_to "Delete Track", @track, :method => 'delete', :class => 'btn btn-outline-dark' %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>

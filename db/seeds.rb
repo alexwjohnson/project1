@@ -120,7 +120,7 @@ r5 = Release.create :name => 'Alex Agore : Promised You Love', :release_type => 
 r6 = Release.create :name => 'RECK: Eukatech', :release_type => '12 inch Single', :media => 'vinyl'
 r7 = Release.create :name => 'Mr. Velcro Fastener: Electrical Applicances', :release_type => '12 inch Single', :media => 'vinyl'
 r8 = Release.create :name => 'Mr C: Terricola', :release_type => '12 inch Single', :media => 'vinyl'
-r9 = Release.create :name => 'Deee-Lite! Groove ISIn The Heart', :release_type => '12 inch EP', :media => 'vinyl'
+r9 = Release.create :name => 'Deee-Lite! Groove Is In The Heart', :release_type => '12 inch EP', :media => 'vinyl'
 r10 = Release.create :name => 'Massive Attack - Ritual', :release_type => '12 inch EP', :media => 'vinyl'
 r11 = Release.create :name => 'King Britt Present Sylk 130 : When The Funk Hits The Fan', :release_type => '12 inch Album', :media => 'vinyl'
 r12 = Release.create :name => 'Q: Are We Not Men? A: No! We are Devo!', :release_type => '12 inch Album', :media => 'vinyl'
@@ -243,3 +243,35 @@ g10.tracks << t57 << t58 << t59 << t60 << t61 << t62 << t63 << t64 << t65 << t66
 g11.tracks << t90 << t91 << t92 << t93 << t94 << t95 << t96 << t97 << t98 << t99 << t100 << t101 << t102 << t103 << t104 << t105
 g12.tracks  << t83 << t84 << t85 << t86 << t87 << t88 << t89
 
+# puts "Genres and Releases"
+# g1.releases << r1 << r2 << r3 << r4
+# g2.releases << r5
+# g3.releases << r6
+# g4.releases << r7
+# g5.releases << r8
+# g6.releases << r9
+# g7.releases << r10
+# g8.releases << r11 << r14
+# g9.releases << r12
+# g10.releases << r13
+# g11.releases << r16
+# g12.releases << r15
+
+
+
+# puts "Labels and Releases"
+# l1.releases << r1 << r2
+# l2.releases << r3
+# l3.releases << r4
+# l4.releases << r5
+# l5.releases << r6
+# l6.releases << r7
+# l7.releases << r8
+# l8.releases << r9
+# l9.releases << r10
+# l10.releases << r11
+# l11.releases << r12
+# l12.releases << r13
+# l13.releases << r14
+# l14.releases << r16
+# l15.releases << r15
