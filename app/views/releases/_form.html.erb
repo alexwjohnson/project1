@@ -2,6 +2,8 @@
 <%= form_for(@release, :html => {:multipart => true}) do |f| %>
     <%= f.label :name, :for => 'floatingInput' %>
     <%= f.text_field :name, :class => 'form-control', :id => 'floatingInput', :placeholder => 'Lust For Life' %>
+    <%= f.label :genre, :for => 'floatingInput' %>
+    <%= f.text_field :genre, :class => 'form-control', :id => 'floatingInput', :placeholder => 'Rock' %>
     <%= f.label :release_type, :for => 'floatingInput' %>
     <%= f.text_field :release_type, :class => 'form-control', :id => 'floatingInput', :placeholder => '12 inch Single' %>
     <%= f.label :year, :for => 'floatingInput' %>

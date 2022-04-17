@@ -48,7 +48,8 @@ class ReleasesController < ApplicationController
 
   private 
   def release_params
-      params.require(:release).permit(:name, :release_type, :year, :media, :image)
+      params.require(:release).permit(:name, :release_type, :year, :media, :genre, :image)
   end
 
 end
+  
