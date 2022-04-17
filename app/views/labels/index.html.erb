@@ -1,8 +1,17 @@
 <h1>All Labels</h1>
-
-<% @labels.each do |label| %>
-    <%# <%= image_tag label.image, :class => 'thumb' if label.image.present? %>
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+         <img class="img-fluid" src="https://res.cloudinary.com/dy9id3syp/image/upload/e_improve,w_200,h_600,c_thumb,g_auto/v1650094198/aytimgkzk4hlcqdkncuw.jpg" />
+    </div>
+    <div class="col align-self-left">
+        <% @labels.each do |label| %>
         <ul>
             <li class="no-bullets"><%= link_to label.name, label %></li>
         </ul>
 <% end %>
+    </div>
+  </div>
+</div>
+
+

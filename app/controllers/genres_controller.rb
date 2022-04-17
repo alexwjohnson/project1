@@ -16,6 +16,7 @@ class GenresController < ApplicationController
   def show
     def show
       @genre = Genre.find params[:id]
+      @releases = Release.all
     end
   end
 
@@ -29,6 +30,4 @@ class GenresController < ApplicationController
   def genre_params
     params.require(:genre).permit(:name)
   end
-
-
 end

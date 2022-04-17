@@ -1,4 +1,11 @@
 <h1><%= @genre.name %></h1>
+<% @releases.each do |release| %>
+        <ul>
+            <% if @genre.name == release.genre  %>
+              <li class="no-bullets"><%= link_to release.name, release %></li>
+            <% end %>
+        </ul>
+<% end %>
 <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#gModal">
   Delete
 </button>

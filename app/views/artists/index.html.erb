@@ -1,8 +1,9 @@
 <h1>All Artists</h1>
-
 <% @artists.each do |artist| %>
-    <%= image_tag artist.image, :class => 'thumb' if artist.image.present? %>
         <ul>
+         <%= cl_image_tag(artist.image, :width=>100, :crop=>"thumb") %>
             <li class="no-bullets"><%= link_to artist.name, artist %></li>
         </ul>
 <% end %>
+
+

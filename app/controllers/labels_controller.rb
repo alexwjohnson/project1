@@ -7,8 +7,6 @@ class LabelsController < ApplicationController
     @label = Label.new
   end
   def create
-    # label = Label.create label_params 
-    # redirect_to label  
     label = Label.create label_params
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
@@ -22,10 +20,6 @@ class LabelsController < ApplicationController
     @label = Label.find params[:id] 
   end
   def update 
-    # label = Label.find params[:id]
-    # label.update label_params
-    # redirect_to label
-      #cloudify
     label = Label.find(params[:id])  
       if params[:file].present?
         req = Cloudinary::Uploader.upload(params[:file])
@@ -34,11 +28,11 @@ class LabelsController < ApplicationController
       label.update_attributes(label_params)
       label.save
       redirect_to(label_path(label))
-    #cloudify
   end
 
   def show
     @label = Label.find params[:id] 
+    @releases = Release.all
   end
 
   def destroy

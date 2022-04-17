@@ -17,7 +17,8 @@
                 <div>
             <ol>
             <% @release.tracks.each do |track| %>
-            <li> <%= track.title %></li>    
+            <li><%= link_to track.title, track %></li>
+            <%puts track.rmx%>
         <% end %>
             </ol>
         </div>

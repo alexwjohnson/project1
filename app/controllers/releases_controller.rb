@@ -7,8 +7,6 @@ class ReleasesController < ApplicationController
     @release = Release.new
   end
   def create
-    # release = Release.create release_params 
-    # redirect_to release  
      release = Release.create release_params
      if params[:file].present?
        req = Cloudinary::Uploader.upload(params[:file])
@@ -22,9 +20,6 @@ class ReleasesController < ApplicationController
     @release = Release.find params[:id] 
   end
   def update 
-    # release = Release.find params[:id]
-    # release.update release_params
-        #cloudify
         release = Release.find(params[:id])  
         if params[:file].present?
           req = Cloudinary::Uploader.upload(params[:file])
@@ -33,7 +28,6 @@ class ReleasesController < ApplicationController
         release.update_attributes(release_params)
         release.save
         redirect_to(release_path(release))
-        #cloudify
   end
 
   def show
